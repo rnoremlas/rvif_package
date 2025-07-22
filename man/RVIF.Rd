@@ -1,4 +1,4 @@
-\encoding{latin1}
+\encoding{utf8} % \encoding{latin1}
 \name{RVIF}
 \alias{RVIF}
 %- Also NEED an '\alias' for EACH other topic documented here.
@@ -13,30 +13,30 @@ RVIF(X, l_u=TRUE, l=40, intercept=TRUE, graf=TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
- \item{X}{A numeric design matrix that should contain more than one regressor.}
-  \item{l_u}{A logical value that indicates if the variables in the design matrix \code{X} are transformed to have unit length. By default \code{l_u=TRUE}.}
+ \item{X}{A numerical design matrix that should contain more than one regressor.}
+  \item{l_u}{A logical value that indicates if the variables in the design matrix \code{X} are transformed to unit length. By default \code{l_u=TRUE}.}
   \item{l}{A real number that indicates the lower limit of the vertical axis of the scatter plot between the Variance Inflation Factor (VIF) and the Coefficient of Variation (CV). By default \code{l=40}.}
   \item{intercept}{A logical value that indicates if the design matrix \code{X} have intercept. By default \code{intercept=TRUE}.}
-  \item{graf}{A logical value that indicates if the scatter plot between the VIF and CV is represented by using CV_VIF function. By default \code{graf=TRUE}.}
+  \item{graf}{A logical value that indicates if the scatter plot between the VIF and CV is represented by using the CV_VIF function. By default \code{graf=TRUE}.}
 }
 \details{
-The Redefined Variation Inflation Factor (RVIF) is able to detect both kind of multicollinearity: the essential (near-linear relationship between at least two independent variables excluding the intercept) an non-essential (near-linear relationship between the intercept and at least one of the remaining independent variables). This measure also quantifies the percentage of near multicollinearity due to each independent variable.
+The Redefined Variation Inflation Factor (RVIF) is capable to detect both kind of multicollinearity: the essential (near-linear relationship between at least two independent variables excluding the intercept) and non-essential (near-linear relationship between the intercept and at least one of the remaining independent variables). This measure also quantifies the percentage of near multicollinearity due to each independent variable.
 }
 \value{
   \item{RVIF}{Redefined Variance Inflation Factor of each independent variable.}
   \item{\%}{Percentage of near multicollinearity due to each independent variable.}
-  \item{Graph}{Scatter plot of VIF and the CV.}
+  \item{Graph}{Scatter plot of VIF and CV.}
 }
 \references{
-R. Salmerón, C. García, and J. García. Variance inflation factor and condition number in multiple linear
+R. SalmerÃ³n, C. GarcÃ­a, and J. GarcÃ­a. Variance inflation factor and condition number in multiple linear
 regression. Journal of Statistical Computation and Simulation, 88:2365-2384, 2018.
 
-R. Salmerón, A. Rodríguez, and C. García. Diagnosis and quantification of the non-essential collinearity.
+R. SalmerÃ³n, A. RodrÃ­guez, and C. GarcÃ­a. Diagnosis and quantification of the non-essential collinearity.
 Computational Statistics, 35:647-666, 2020.
 
-A redefined VIF by Salmerón, R., García, C.B, García, J. (working paper).
+SalmerÃ³n, R., GarcÃ­a, C.B. y GarcÃ­a, J. A redefined Variance Inflation Factor: overcoming the limitations of the Variance Inflation Factor. Computational Economics (2024, online), doi: https://doi.org/10.1007/s10614-024-10575-8.
 }
-\author{R. Salmerón (\email{romansg@ugr.es}) and C. García (\email{cbgarcia@ugr.es}).}
+\author{R. SalmerÃ³n (\email{romansg@ugr.es}) and C. GarcÃ­a (\email{cbgarcia@ugr.es}).}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

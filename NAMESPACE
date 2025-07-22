@@ -1,4 +1,6 @@
 export(CV_VIF)
 export(RVIF)
+export(Theorem)
 import(multiColl)
 importFrom("graphics", "abline", "points", "text")
+importFrom("stats", "lm", "qt")
