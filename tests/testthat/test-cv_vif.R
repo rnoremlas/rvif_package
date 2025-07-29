@@ -1,5 +1,3 @@
-# le pido a ChatGPT que prepare pruebas testthat para la siguiente función
-
 library(testthat)
 library(rvif)
 
