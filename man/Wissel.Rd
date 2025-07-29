@@ -22,13 +22,12 @@ Wissel data on outstanding mortgage debt.
 }
 \references{
 Wissel, J. (2009). A new biased estimator for multivariate regression models with highly collinear variables. 
-Ph.D. thesis, Erlangung des naturwissenschaftlichen Doktorgrades der Bayerischen Julius-Maximilians-Universität Würzburg.
+Ph.D. thesis, Erlangung des naturwissenschaftlichen Doktorgrades der Bayerischen Julius-Maximilians-Universität Würzburg, url: https://opus.bibliothek.uni-wuerzburg.de/opus4-wuerzburg/frontdoor/deliver/index/docId/2949/file/wissel.pdf.
 }
 \examples{
-data(Wissel)
-head(Wissel, n=5)
-y = Wissel[,2]
-X = as.matrix(Wissel[,3:6])
-Theorem(y, X)
+  head(Wissel, n=5)
+  y = Wissel[,2]
+  x = Wissel[,3:6]
+  multicollinearity(y, x)
 }
 \keyword{datasets}
