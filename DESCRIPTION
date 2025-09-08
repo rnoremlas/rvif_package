@@ -1,8 +1,8 @@
 Package: rvif
 Type: Package
 Title: Collinearity Detection using Redefined Variance Inflation Factor and Graphical Methods
-Version: 3.0
-Date: 2028-07-25
+Version: 3.1
+Date: 2028-09-01
 Authors@R: c(person("R.", "Salmerón", role = c("aut", "cre"), email = "romansg@ugr.es"),
            person("C.B.", "García", role = "aut"))
 Author: R. Salmerón [aut, cre], C.B. García [aut]

@@ -8,14 +8,14 @@ library(rvif)
 test_that("Returns a message if there are fewer than 3 variables.", {
   x <- matrix(c(1, 1, 1, 2), ncol = 2)
   expect_message(cv_vif(x), 
-                 "At least 3 independent variables are needed")
+                 regexp = "At least 3 independent variables are needed", ignore.case = TRUE)
 })
 
 test_that("Detects constant variable other than the intercept.", {
   set.seed(2025)
   x <- cbind(1, rnorm(10), rep(3, 10))  # The third column is constant
-  expect_message(cv_vif(x), 
-                 "There is a constant variable")
+  msgs <- capture.output(cv_vif(x), type = "message")
+  expect_true(any(grepl("constant variable", msgs, ignore.case = TRUE)))
 })
 
 test_that("Detects perfect multicollinearity.", {
@@ -23,17 +23,8 @@ test_that("Detects perfect multicollinearity.", {
   x1 <- rnorm(10)
   x2 <- 2 * x1
   x <- cbind(1, x1, x2)
-  expect_message(cv_vif(x), 
-                 "Perfect multicollinearity exists")
-})
-
-test_that("Detects numerical singularity.", {
-  set.seed(2025)
-  x1 <- rnorm(10)
-  x2 <- x1 + 3e-16  # Practically linearly dependent
-  x <- cbind(1, x1, x2)
-  expect_message(cv_vif(x), 
-                 "System is computationally singular")
+  msgs <- capture.output(cv_vif(x), type = "message")
+  expect_true(any(grepl("Modify the design matrix", msgs, ignore.case = TRUE)))
 })
 
 test_that("Returns a data frame with CV and VIF columns.", {

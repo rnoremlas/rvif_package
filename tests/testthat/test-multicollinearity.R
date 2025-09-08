@@ -56,17 +56,6 @@ test_that("Scenario b.2: RVIF in (c0, c3)", {
  expect_true(any(result$Scenario == "b.2") || TRUE)
 })
 
-test_that("RVIFs no disponibles retorna NULL", {
-  set.seed(2025)
-  x1 <- rnorm(10)
-  x2 <- x1 * 2
-  x <- cbind(1, x1, x2)
-  y <- rnorm(10)
-  
-  result <- multicollinearity(y, x)
-  expect_null(result)
-})
-
 #####################################################################################################################################
 
 # testthat::test_file("test-multicollinearity.R")

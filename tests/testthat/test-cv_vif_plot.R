@@ -43,10 +43,10 @@ test_that("Throws error with input that is not a data frame.", {
 test_that("Throws an error when the number of columns is not 2.", {
   bad_df <- data.frame(CV = c(0.1, 0.2, 0.3))
   expect_message(cv_vif_plot(bad_df), 
-                 "The input is the output of the function 'cv_vif'")
+                 regexp = "The input is the output of the function 'cv_vif'", ignore.case = TRUE)
 })
 
-test_that("No genera error aunque VIF tenga valores altos", {
+test_that("No error is generated even if VIF has high values.", {
   extreme_df <- data.frame(
     CV = c(0.1, 0.2, 0.3),
     VIF = c(15, 30, 100)
