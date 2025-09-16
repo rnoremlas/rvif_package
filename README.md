@@ -54,24 +54,24 @@ This package has the following datasets available:
 
 ## Usage
 
-> library(rvif)
->
-> 
-> x = euribor[, -1]
-> 
-> cv_vif(x)
-> 
-> cv_vif_plot(cv_vif(x), limit=0)
->
-> 
-> rvifs(x)
->
-> 
-> y = euribor[, 1]
-> 
-> multicollinearity(y, x)
-> 
-> multicollinearity(y, x, alpha = 0.01)
+    > library(rvif)
+    >
+    > 
+    > x = euribor[, -1]
+    > 
+    > cv_vif(x)
+    > 
+    > cv_vif_plot(cv_vif(x), limit=0)
+    >
+    > 
+    > rvifs(x)
+    >
+    > 
+    > y = euribor[, 1]
+    > 
+    > multicollinearity(y, x)
+    > 
+    > multicollinearity(y, x, alpha = 0.01)
 
 ## For more information
 
