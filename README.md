@@ -38,11 +38,11 @@ You can install the development version from Github:
 
 ## For more information
 
-- Salmerón R., García C.B. and García J. (2018). Variance Inflation Factor and Condition Number in multiple linear regression, Journal of Statistical Computation and Simulation, 88 (12), 2365-2384, <doi: [10.1080/00949655.2018.1463376](https://doi.org/10.1080/00949655.2018.1463376)>.
-- Salmerón, R., Rodríguez, A. and García C. (2020). Diagnosis and quantification of the non-essential collinearity. Computational Statistics, 35, 647-666, <doi: https://doi.org/10.1007/s00180-019-00922-x>.
-- Salmerón, R., García, C.B, Rodríguez, A. and García, C. (2022) <doi:10.32614/RJ-2023-010>.
-- Salmerón, R., García, C.B. and García, J. (2025) <doi:10.1007/s10614-024-10575-8>.
-- Salmerón, R., García, C.B, García J. (2023, working paper) <doi:10.48550/arXiv.2005.02245>.
+- Salmerón R., García C.B. and García J. (2018). Variance Inflation Factor and Condition Number in multiple linear regression. Journal of Statistical Computation and Simulation, 88 (12), 2365-2384, <doi: [10.1080/00949655.2018.1463376](https://doi.org/10.1080/00949655.2018.1463376)>.
+- Salmerón, R., Rodríguez, A. and García C. (2020). Diagnosis and quantification of the non-essential collinearity. Computational Statistics, 35, 647-666, <doi: [10.1007/s00180-019-00922-x](https://doi.org/10.1007/s00180-019-00922-x)>.
+- Salmerón, R., García, C.B, Rodríguez, A. and García, C. (2022). Limitations in detecting multicollinearity due to scaling issues in the mcvis package. The R Journal, 14 (4), 264-279, <doi: [10.32614/RJ-2023-010](https://journal.r-project.org/articles/RJ-2023-010/)>.
+- Salmerón, R., García, C.B. and García, J. (2025). A Redefined Variance Inflation Factor: overcoming the limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, <doi: [10.1007/s10614-024-10575-8](https://doi.org/10.1007/s10614-024-10575-8)>.
+- Salmerón, R., García, C.B, García J. (2023, working paper). Overcoming the inconsistences of the variance inflation factor: a redefined VIF and a test to detect statistical troubling multicollinearity. ArXiv, <doi: [10.48550/arXiv.2005.02245](https://arxiv.org/abs/2005.02245)>.
 - The package vignette using 'browseVignettes("rvif")'.
 - The package website using 'browseURL(system.file("docs/index.html", package = "rvif"))'.
 
