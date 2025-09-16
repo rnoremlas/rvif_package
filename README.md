@@ -1,6 +1,8 @@
 # rvif_package
 
-This repository has been created to control the rvif package. The objective of this package is to detect multicollinearity using the variance inflation factor redefined and the scatterplot between the variance inflation factor and the coefficient of variation.
+This repository has been created to control the rvif package. This package is focused on determining whether or not the degree of approximate multicollinearity in a multiple linear regression model is of concern, meaning that it affects the statistical analysis (i.e. individual significance tests) of the model.
+
+This package uses functions from the multiColl package.
 
 Previous versions: 1.0 and 3.0
 
@@ -52,19 +54,27 @@ This package has the following datasets available:
 
 > library(rvif)
 >
+> 
 > x = euribor[, -1]
+> 
 > cv_vif(x)
+> 
 > cv_vif_plot(cv_vif(x), limit=0)
 >
+> 
 > rvifs(x)
 >
+> 
 > y = euribor[, 1]
+> 
 > multicollinearity(y, x)
+> 
 > multicollinearity(y, x, alpha = 0.01)
 
 ## For more information
 
 - CRAN: Package rvif, <https://CRAN.R-project.org/package=rvif>.
+- CRAN: Package multiColl, <https://CRAN.R-project.org/package=multiColl>.
 - Salmerón R., García C.B. and García J. (2018). Variance Inflation Factor and Condition Number in multiple linear regression. Journal of Statistical Computation and Simulation, 88 (12), 2365-2384, <doi: [10.1080/00949655.2018.1463376](https://doi.org/10.1080/00949655.2018.1463376)>.
 - Salmerón, R., Rodríguez, A. and García C. (2020). Diagnosis and quantification of the non-essential collinearity. Computational Statistics, 35, 647-666, <doi: [10.1007/s00180-019-00922-x](https://doi.org/10.1007/s00180-019-00922-x)>.
 - Salmerón, R., García, C.B, Rodríguez, A. and García, C. (2022). Limitations in detecting multicollinearity due to scaling issues in the mcvis package. The R Journal, 14 (4), 264-279, <doi: [10.32614/RJ-2023-010](https://journal.r-project.org/articles/RJ-2023-010/)>.
