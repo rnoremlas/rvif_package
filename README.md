@@ -2,7 +2,7 @@
 
 This repository has been created to control the **rvif** package. This package is focused on determining whether or not the degree of approximate multicollinearity in a multiple linear regression model is of concern, meaning that it affects the statistical analysis (i.e. individual significance tests) of the model.
 
-This package uses functions from the multiColl package.
+This package uses functions from the **multiColl** package.
 
 Previous versions: 1.0 and 3.0
 
@@ -40,15 +40,15 @@ You can install the development version from Github:
 
 This package has the following datasets available:
 
-- euribor: Data used in Example 1 of Salmerón, García and García (2025) (subsection 4.1) on Euribor data.
-- CDpf: Data used in Example 2 of Salmerón, García and García (2025) (subsection 4.2) on data for the Cobb-Douglas production function.
-- employees: Data used in Example 3 of Salmerón, García and García (2025) (subsection 4.3) on the number of employees of Spanish companies.
-- SLM1: First data used in Example 4 of Salmerón, García and García (2025) (subsection 4.4) on the special case of the simple linear model.
-- SLM2: Second data used in Example 4 of Salmerón, García and García (2025) (subsection 4.4) on the special case of the simple linear model.
-- soil: Data used in Bondell and Reich's paper (<https://doi.org/10.1111/j.1541-0420.2007.00843.x>) on soil characteristics used as predictors of forest diversity.
-- Wissel: Wissel data on outstanding mortgage debt (<https://opus.bibliothek.uni-wuerzburg.de/opus4-wuerzburg/frontdoor/deliver/index/docId/2949/file/wissel.pdf>).
-- KG: Klein and Goldberger data on consumption and wage income.
-- theil: Henri Theil's textile consumption data modified.
+- *euribor*: Data used in Example 1 of Salmerón, García and García (2025) (subsection 4.1) on Euribor data.
+- *CDpf*: Data used in Example 2 of Salmerón, García and García (2025) (subsection 4.2) on data for the Cobb-Douglas production function.
+- *employees*: Data used in Example 3 of Salmerón, García and García (2025) (subsection 4.3) on the number of employees of Spanish companies.
+- *SLM1*: First data used in Example 4 of Salmerón, García and García (2025) (subsection 4.4) on the special case of the simple linear model.
+- *SLM2*: Second data used in Example 4 of Salmerón, García and García (2025) (subsection 4.4) on the special case of the simple linear model.
+- *soil*: Data used in Bondell and Reich's paper (<https://doi.org/10.1111/j.1541-0420.2007.00843.x>) on soil characteristics used as predictors of forest diversity.
+- *Wissel*: Wissel data on outstanding mortgage debt (<https://opus.bibliothek.uni-wuerzburg.de/opus4-wuerzburg/frontdoor/deliver/index/docId/2949/file/wissel.pdf>).
+- *KG*: Klein and Goldberger data on consumption and wage income.
+- *theil*: Henri Theil's textile consumption data modified.
 
 ## Usage
 
