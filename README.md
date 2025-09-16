@@ -21,3 +21,16 @@ Previous versions: 1.0 and 3.0
     Errors detected in the tests have been corrected.
 
 > Current version: 3.1
+
+# Instalation
+
+You can install the stable version from CRAN.
+
+> install.packages("forecast", dependencies = TRUE)
+
+You can install the development version from Github
+
+> # install.packages("remotes")
+> remotes::install_github("rnoremlas/rvif")
+
+# Usage
