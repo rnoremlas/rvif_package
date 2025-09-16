@@ -1,6 +1,6 @@
 # rvif_package
 
-This repository has been created to control the rvif package. This package is focused on determining whether or not the degree of approximate multicollinearity in a multiple linear regression model is of concern, meaning that it affects the statistical analysis (i.e. individual significance tests) of the model.
+This repository has been created to control the **rvif** package. This package is focused on determining whether or not the degree of approximate multicollinearity in a multiple linear regression model is of concern, meaning that it affects the statistical analysis (i.e. individual significance tests) of the model.
 
 This package uses functions from the multiColl package.
 
