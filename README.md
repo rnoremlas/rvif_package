@@ -38,8 +38,8 @@ You can install the development version from Github:
 
 ## For more information
 
-- Salmerón R., García C.B. and García J. (2018) <doi:10.1080/00949655.2018.1463376>.
-- Salmerón, R., Rodríguez, A. and García C. (2020) <doi:10.1007/s00180-019-00922-x>.
+- Salmerón R., García C.B. and García J. (2018). Variance Inflation Factor and Condition Number in multiple linear regression, Journal of Statistical Computation and Simulation, 88 (12), 2365-2384, <doi: [10.1080/00949655.2018.1463376](https://doi.org/10.1080/00949655.2018.1463376)>.
+- Salmerón, R., Rodríguez, A. and García C. (2020). Diagnosis and quantification of the non-essential collinearity. Computational Statistics, 35, 647-666, <doi: https://doi.org/10.1007/s00180-019-00922-x>.
 - Salmerón, R., García, C.B, Rodríguez, A. and García, C. (2022) <doi:10.32614/RJ-2023-010>.
 - Salmerón, R., García, C.B. and García, J. (2025) <doi:10.1007/s10614-024-10575-8>.
 - Salmerón, R., García, C.B, García J. (2023, working paper) <doi:10.48550/arXiv.2005.02245>.
