@@ -24,7 +24,11 @@ Function names and arguments have been renamed and revised to improve usability.
 
 Errors detected in the tests have been corrected.
 
-> Current version: 3.1
+> Changes from version 3.1 to 3.2:
+
+cv_vif_plot() has been replaced with an S3 method plot.cv_vif().
+
+> Current version: 3.2
 
 ## Instalation
 
@@ -61,7 +65,10 @@ This package has the following datasets available:
     > 
     > cv_vif(x)
     > 
-    > cv_vif_plot(cv_vif(x), limit=0)
+    > plot(cv_vif(x))
+    > abline(h=10, col="red", lwd=3, lty=2)
+    > abline(h=0, col="black", lwd=1)
+    > abline(v=0.1002506, col="red", lwd=3, lty=3)
     >
     > 
     > rvifs(x)
@@ -83,7 +90,7 @@ This package has the following datasets available:
 - Salmerón, R., García, C.B. and García, J. (2025). A Redefined Variance Inflation Factor: overcoming the limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, <doi: [10.1007/s10614-024-10575-8](https://doi.org/10.1007/s10614-024-10575-8)>.
 - Salmerón, R., García, C.B, García J. (2023, working paper). Overcoming the inconsistences of the variance inflation factor: a redefined VIF and a test to detect statistical troubling multicollinearity. ArXiv, <doi: [10.48550/arXiv.2005.02245](https://arxiv.org/abs/2005.02245)>.
 - The package vignette using 'browseVignettes("rvif")'.
-- The package website using 'browseURL(system.file("docs/index.html", package = "rvif"))'.
+- The package website using 'browseURL(system.file("docs/index.html", package = "rvif"))' or <https://www.ugr.es/~romansg/rvif/index.html>. 
 
 ## License
 
