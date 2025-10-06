@@ -22,10 +22,10 @@ Data used in example 3 of Salmerón, García and García (2024) (subsection 4.3)
 This dataset is originally used by Salmerón, Rodríguez, García and García (2020).
 }
 \references{
-Salmerón, R., Rodríguez, A., García, C.B. and García, J. (2020). The VIF and MSE in raise regression. Mathematics, 8(4), doi: https://doi.org/10.3390/math8040605.
+Salmerón, R., Rodríguez, A., García, C.B. and García, J. (2020). The VIF and MSE in raise regression. Mathematics, 8(4), doi: \doi{10.3390/math8040605}.
 
 Salmerón, R., García, C.B. and García, J. (2025). A redefined Variance Inflation Factor: overcoming the 
-limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: https://doi.org/10.1007/s10614-024-10575-8.
+limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: \doi{10.1007/s10614-024-10575-8}.
 }
 \examples{
   head(employees, n=5)

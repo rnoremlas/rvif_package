@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rvif</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,11 +78,14 @@ and determining the kind of multicollinearity present and the variables causing 
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
     <p>Salmerón, R., García, C.B. and García, J. (2018). Variance inflation factor and condition number in multiple linear
-regression. Journal of Statistical Computation and Simulation, 88:2365-2384, doi: https://doi.org/10.1080/00949655.2018.1463376.</p>
+regression. Journal of Statistical Computation and Simulation, 88:2365-2384, doi: <a href="https://doi.org/10.1080/00949655.2018.1463376" class="external-link">doi:10.1080/00949655.2018.1463376</a>
+.</p>
 <p>Salmerón, R., Rodríguez, A. and García, C.B. (2020). Diagnosis and quantification of
-the non-essential collinearity. Computational Statistics, 35(2), 647-666, doi: https://doi.org/10.1007/s00180-019-00922-x.</p>
+the non-essential collinearity. Computational Statistics, 35(2), 647-666, doi: <a href="https://doi.org/10.1007/s00180-019-00922-x" class="external-link">doi:10.1007/s00180-019-00922-x</a>
+.</p>
 <p>Salmerón, R., García, C.B., Rodríguez, A. and García, C. (2022). Limitations in detecting multicollinearity due to scaling issues in the
-mcvis package. R Journal, 14(4), 264-279, doi: https://doi.org/10.32614/RJ-2023-010.</p>
+mcvis package. R Journal, 14(4), 264-279, doi: <a href="https://doi.org/10.32614/RJ-2023-010" class="external-link">doi:10.32614/RJ-2023-010</a>
+.</p>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -90,7 +93,7 @@ mcvis package. R Journal, 14(4), 264-279, doi: https://doi.org/10.32614/RJ-2023-
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p><code><a href="cv_vif_plot.html">cv_vif_plot</a></code></p></div>
+    <div class="dont-index"><p><code><a href="plot.cv_vif.html">plot.cv_vif</a></code></p></div>
     </div>
 
     <div class="section level2">
@@ -108,7 +111,7 @@ mcvis package. R Journal, 14(4), 264-279, doi: https://doi.org/10.32614/RJ-2023-
 <span class="r-in"><span>  <span class="va">y</span> <span class="op">=</span> <span class="va">SLM1</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span></span></span>
 <span class="r-in"><span>  <span class="va">x</span> <span class="op">=</span> <span class="va">SLM1</span><span class="op">[</span>,<span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></span></span>
 <span class="r-in"><span>  <span class="fu">cv_vif</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> At least 3 independent variables are needed (including the interceptin the first column) to carry out the calculations.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> At least 3 independent variables are needed (including the intercept in the first column) to carry out the calculations. The code 'plot(cv_vif(x))' or 'cv_vif(x) |&gt; plot()' will fail.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">### Example 2</span></span></span>
 <span class="r-in"><span><span class="co">### Creating the design matrix</span></span></span>
@@ -170,7 +173,7 @@ mcvis package. R Journal, 14(4), 264-279, doi: https://doi.org/10.32614/RJ-2023-
 <span class="r-in"><span>  <span class="va">y</span> <span class="op">=</span> <span class="va">soil</span><span class="op">[</span>,<span class="fl">16</span><span class="op">]</span></span></span>
 <span class="r-in"><span>  <span class="va">x</span> <span class="op">=</span> <span class="va">soil</span><span class="op">[</span>,<span class="op">-</span><span class="fl">16</span><span class="op">]</span></span></span>
 <span class="r-in"><span>  <span class="fu">cv_vif</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> System is computationally singular. Modify the design matrix before running the code.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> System is computationally singular. Modify the design matrix before running the code. The code 'plot(cv_vif(x))' or 'cv_vif(x) |&gt; plot()' will fail.</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

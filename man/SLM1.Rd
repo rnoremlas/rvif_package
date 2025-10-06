@@ -19,7 +19,7 @@ First data used in example 4 of Salmerón, García and García (2024) (subsectio
 }
 \references{
 Salmerón, R., García, C.B. and García, J. (2025). A redefined Variance Inflation Factor: overcoming the 
-limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: https://doi.org/10.1007/s10614-024-10575-8.
+limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: \doi{10.1007/s10614-024-10575-8}.
 }
 \examples{
   head(SLM1, n=5)

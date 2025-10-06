@@ -33,13 +33,13 @@ This measure also quantifies the percentage of near multicollinearity due to eac
 }
 \references{
 R. Salmerón, C. García, and J. García. (2018). Variance inflation factor and condition number in multiple linear
-regression. Journal of Statistical Computation and Simulation, 88:2365-2384, doi: https://doi.org/10.1080/00949655.2018.1463376.
+regression. Journal of Statistical Computation and Simulation, 88:2365-2384, doi: \doi{10.1080/00949655.2018.1463376}.
 
 Salmerón, R., Rodríguez, A. and García, C.B. (2020). Diagnosis and quantification of 
-the non-essential collinearity. Computational Statistics, 35(2), 647-666, doi: https://doi.org/10.1007/s00180-019-00922-x.
+the non-essential collinearity. Computational Statistics, 35(2), 647-666, doi: \doi{10.1007/s00180-019-00922-x}.
 
 Salmerón, R., García, C.B. y García, J. (2025). A redefined Variance Inflation Factor: overcoming the limitations of the Variance Inflation Factor. 
-Computational Economics, 65, 337-363, doi: https://doi.org/10.1007/s10614-024-10575-8.
+Computational Economics, 65, 337-363, doi: \doi{10.1007/s10614-024-10575-8}.
 }
 \author{R. Salmerón (\email{romansg@ugr.es}) and C. García (\email{cbgarcia@ugr.es}).}
 \examples{

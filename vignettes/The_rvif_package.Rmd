@@ -3,8 +3,10 @@ title: "The_rvif_package"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{The_rvif_package}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include = FALSE}
@@ -177,15 +179,15 @@ cv_vif(x)
 
 All calculations involving a binary variable in the design matrix, X, are performed without any problem. However, we would like to point out to the reader that the associated VIF should not be interpreted as a quantitative variable. We recommend ignoring it.
 
-## *cv_vif_plot* function
+## *plot.cv_vif* function
 
-The *cv_vif_plot* function is intended to facilitate the interpretation of the results provided by the *cv_vif* function. For this reason, the input of this function (first argument) is the output from the *cv_vif* function.
+The *plot.cv_vif* function is intended to facilitate the interpretation of the results provided by the *cv_vif* function. For this reason, the input of this function (first argument) is the output from the *cv_vif* function.
 Consequently, it represents the scatter plot of the Coefficient of Variation (CV) and the Variance Inflation Factor (VIF) for the independent variables (excluding the intercept) of a multiple linear regression model. 
 
 The command and arguments of this function are as follows:
 
 ```{r}
-# cv_vif_plot(x, limit = 40)
+# plot.cv_vif(x, limit = 40)
 ```
 
 It should be noted that the distinction between essential and non-essential multicollinearity and the limitations of each measure (CV and VIF) for detecting the different kinds of multicollinearity, can be very useful to detect if there is a troubling degree of multicollinearity, what kind of multicollinearity it is and what variables are causing it. For this purpose, it is important to include in the representation of the scatter plot of the CV and VIF the lines corresponding to the established thresholds for each measure: dashed vertical line for 0.1002506 (CV) and dotted horizontal line for 10 (VIF). 
@@ -206,14 +208,34 @@ text(10, 2, "D", pos=3, col="blue")
 
 #### Some examples
 
-When the *cv_vif_plot* command is applied to the Wissel data, it is clear that the three independent variables have a CV greater than 0.1002506 (dashed vertical line) and a VIF greater than 10 (dotted horizontal line). Therefore, it can be concluded immediately that the degree of multicollinearity of the non-essential type is not strong, but that of the essential type is.
+When the *plot.cv_vif* command is applied to the Wissel data, it is clear that the three independent variables have a CV greater than 0.1002506 (dashed vertical line) and a VIF greater than 10 (dotted horizontal line). Therefore, it can be concluded immediately that the degree of multicollinearity of the non-essential type is not strong, but that of the essential type is.
 
 ```{r, out.width="50%", fig.align='center'}
 x = Wissel[,-c(1,2)]
-cv_vif_plot(cv_vif(x))
+plot(cv_vif(x))
+abline(h=10, col="red", lwd=2, lty=2)
+abline(h=0, col="black", lwd=1)
+abline(v=0.1002506, col="red", lwd=2, lty=3)
+  labels = c()
+  for(i in 1:length(cv_vif(x)[[1]])){labels = c(labels, i+1)}
+  text(cv_vif(x)[[1]], cv_vif(x)[[2]], labels = labels, pos=3)
 ```
 
-When the *cv_vif_plot* function is applied to the simulation of the second example of the *cv_vif* function, it can be observed that the second variable causes non-essential multicollinearity while the third and fourth variables cause essential multicollinearity:
+Another equivalent way to obtain this representation is:
+
+```{r, out.width="50%", fig.align='center'}
+cv_vif(x) |> plot()
+abline(h=10, col="red", lwd=2, lty=2)
+abline(h=0, col="black", lwd=1)
+abline(v=0.1002506, col="red", lwd=2, lty=3)
+  labels = c()
+  for(i in 1:length(cv_vif(x)[[1]])){labels = c(labels, i+1)}
+  text(cv_vif(x)[[1]], cv_vif(x)[[2]], labels = labels, pos=3)
+```
+
+Please note that horizontal and vertical lines do not appear in the above graphical representations because the environment considers their coordinates to be outside the range of the graph; however, they are displayed correctly in the package help.
+
+When the *plot.cv_vif* function is applied to the simulation of the second example of the *cv_vif* function, it can be observed that the second variable causes non-essential multicollinearity while the third and fourth variables cause essential multicollinearity:
 
 ```{r, out.width="50%", fig.align='center'}
 set.seed(2025)
@@ -226,9 +248,27 @@ set.seed(2025)
     x5 = rnorm(obs, -1, 30)
     x = cbind(cte, x2, x3, x4, x5) # the first column has to be the intercept
     
-cv_vif_plot(cv_vif(x))
-cv_vif_plot(cv_vif(x), limit=0) # note how the 'limit' argument works
+plot(cv_vif(x))
+abline(h=10, col="red", lwd=2, lty=2)
+abline(h=0, col="black", lwd=1)
+abline(v=0.1002506, col="red", lwd=2, lty=3)
+  labels = c()
+  for(i in 1:length(cv_vif(x)[[1]])){labels = c(labels, i+1)}
+  text(cv_vif(x)[[1]], cv_vif(x)[[2]], labels = labels, pos=3)
 ```
+
+On the other hand, in the event that the *cv_vif* function returns an error, this error is reproduced when attempting to display its output:
+
+```{r, out.width="50%", fig.align='center'}
+x = SLM2[,2:3]
+cv_vif(x) |> plot()
+```
+
+```{r, out.width="50%", fig.align='center'}
+x = soil[,-16]
+plot(cv_vif(x))
+```
+
 
 ## *rvifs* function
 

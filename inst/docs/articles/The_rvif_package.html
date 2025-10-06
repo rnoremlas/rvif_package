@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rvif</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -231,7 +231,7 @@ this case.</p>
 <span>    <span class="va">x</span> <span class="op">=</span> <span class="va">soil</span><span class="op">[</span>,<span class="op">-</span><span class="fl">16</span><span class="op">]</span></span>
 <span>    </span>
 <span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; System is computationally singular. Modify the design matrix before running the code.</span></span></code></pre></div>
+<span><span class="co">#&gt; System is computationally singular. Modify the design matrix before running the code. The code 'plot(cv_vif(x))' or 'cv_vif(x) |&gt; plot()' will fail.</span></span></code></pre></div>
 <p>The second argument of this function sets the threshold used to
 determine whether the system is computationally singular. Eliminating
 the second variable allows the results to be obtained without any
@@ -293,7 +293,7 @@ the following error message occurs:</p>
 <code class="sourceCode R"><span><span class="va">cte</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">cte</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; There is a constant variable. Delete it before running the code or, if it is the intercept, it must be the first column of the design matrix.</span></span></code></pre></div>
+<span><span class="co">#&gt; There is a constant variable. Delete it before running the code or, if it is the intercept, it must be the first column of the design matrix. The code 'plot(cv_vif(x))' or 'cv_vif(x) |&gt; plot()' will fail.</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="a-fourth-example-the-special-case-of-the-simple-linear-regression-model">A fourth example: the special case of the simple linear regression
@@ -318,7 +318,7 @@ columns:</p>
 <span>  <span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">cte</span>, <span class="va">x2</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; At least 3 independent variables are needed (including the interceptin the first column) to carry out the calculations.</span></span></code></pre></div>
+<span><span class="co">#&gt; At least 3 independent variables are needed (including the intercept in the first column) to carry out the calculations. The code 'plot(cv_vif(x))' or 'cv_vif(x) |&gt; plot()' will fail.</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="final-warning-regarding-the-presence-of-binary-variables-in-the-model">Final warning regarding the presence of binary variables in the
@@ -358,10 +358,10 @@ quantitative variable. We recommend ignoring it.</p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="cv_vif_plot-function">
-<em>cv_vif_plot</em> function<a class="anchor" aria-label="anchor" href="#cv_vif_plot-function"></a>
+<h2 id="plot-cv_vif-function">
+<em>plot.cv_vif</em> function<a class="anchor" aria-label="anchor" href="#plot-cv_vif-function"></a>
 </h2>
-<p>The <em>cv_vif_plot</em> function is intended to facilitate the
+<p>The <em>plot.cv_vif</em> function is intended to facilitate the
 interpretation of the results provided by the <em>cv_vif</em> function.
 For this reason, the input of this function (first argument) is the
 output from the <em>cv_vif</em> function. Consequently, it represents
@@ -370,7 +370,7 @@ Inflation Factor (VIF) for the independent variables (excluding the
 intercept) of a multiple linear regression model.</p>
 <p>The command and arguments of this function are as follows:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># cv_vif_plot(x, limit = 40)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># plot.cv_vif(x, limit = 40)</span></span></code></pre></div>
 <p>It should be noted that the distinction between essential and
 non-essential multicollinearity and the limitations of each measure (CV
 and VIF) for detecting the different kinds of multicollinearity, can be
@@ -402,7 +402,7 @@ multicollinearity; D: non-troubling degree of existing multicollinearity
 <div class="section level4">
 <h4 id="some-examples">Some examples<a class="anchor" aria-label="anchor" href="#some-examples"></a>
 </h4>
-<p>When the <em>cv_vif_plot</em> command is applied to the Wissel data,
+<p>When the <em>plot.cv_vif</em> command is applied to the Wissel data,
 it is clear that the three independent variables have a CV greater than
 0.1002506 (dashed vertical line) and a VIF greater than 10 (dotted
 horizontal line). Therefore, it can be concluded immediately that the
@@ -410,14 +410,34 @@ degree of multicollinearity of the non-essential type is not strong, but
 that of the essential type is.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="va">Wissel</span><span class="op">[</span>,<span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">]</span></span>
-<span><span class="fu"><a href="../reference/cv_vif_plot.html">cv_vif_plot</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">10</span>, col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">2</span>, lty<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">0</span>, col<span class="op">=</span><span class="st">"black"</span>, lwd<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>v<span class="op">=</span><span class="fl">0.1002506</span>, col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">2</span>, lty<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span>  <span class="va">labels</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">{</span><span class="va">labels</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">labels</span>, <span class="va">i</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span><span class="op">}</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>, labels <span class="op">=</span> <span class="va">labels</span>, pos<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <p><img src="The_rvif_package_files/figure-html/unnamed-chunk-16-1.png" width="50%" style="display: block; margin: auto;"></p>
-<p>When the <em>cv_vif_plot</em> function is applied to the simulation
+<p>Another equivalent way to obtain this representation is:</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">10</span>, col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">2</span>, lty<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">0</span>, col<span class="op">=</span><span class="st">"black"</span>, lwd<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>v<span class="op">=</span><span class="fl">0.1002506</span>, col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">2</span>, lty<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span>  <span class="va">labels</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">{</span><span class="va">labels</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">labels</span>, <span class="va">i</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span><span class="op">}</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>, labels <span class="op">=</span> <span class="va">labels</span>, pos<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<p><img src="The_rvif_package_files/figure-html/unnamed-chunk-17-1.png" width="50%" style="display: block; margin: auto;"></p>
+<p>Please note that horizontal and vertical lines do not appear in the
+above graphical representations because the environment considers their
+coordinates to be outside the range of the graph; however, they are
+displayed correctly in the package help.</p>
+<p>When the <em>plot.cv_vif</em> function is applied to the simulation
 of the second example of the <em>cv_vif</em> function, it can be
 observed that the second variable causes non-essential multicollinearity
 while the third and fourth variables cause essential
 multicollinearity:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">2025</span><span class="op">)</span></span>
 <span></span>
 <span>    <span class="va">obs</span> <span class="op">=</span> <span class="fl">100</span></span>
@@ -428,11 +448,27 @@ multicollinearity:</p>
 <span>    <span class="va">x5</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">obs</span>, <span class="op">-</span><span class="fl">1</span>, <span class="fl">30</span><span class="op">)</span></span>
 <span>    <span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">cte</span>, <span class="va">x2</span>, <span class="va">x3</span>, <span class="va">x4</span>, <span class="va">x5</span><span class="op">)</span> <span class="co"># the first column has to be the intercept</span></span>
 <span>    </span>
-<span><span class="fu"><a href="../reference/cv_vif_plot.html">cv_vif_plot</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="The_rvif_package_files/figure-html/unnamed-chunk-17-1.png" width="50%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/cv_vif_plot.html">cv_vif_plot</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, limit<span class="op">=</span><span class="fl">0</span><span class="op">)</span> <span class="co"># note how the 'limit' argument works</span></span></code></pre></div>
-<p><img src="The_rvif_package_files/figure-html/unnamed-chunk-17-2.png" width="50%" style="display: block; margin: auto;"></p>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">10</span>, col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">2</span>, lty<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">0</span>, col<span class="op">=</span><span class="st">"black"</span>, lwd<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>v<span class="op">=</span><span class="fl">0.1002506</span>, col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">2</span>, lty<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span>  <span class="va">labels</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">{</span><span class="va">labels</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">labels</span>, <span class="va">i</span><span class="op">+</span><span class="fl">1</span><span class="op">)</span><span class="op">}</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span>, labels <span class="op">=</span> <span class="va">labels</span>, pos<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<p><img src="The_rvif_package_files/figure-html/unnamed-chunk-18-1.png" width="50%" style="display: block; margin: auto;"></p>
+<p>On the other hand, in the event that the <em>cv_vif</em> function
+returns an error, this error is reproduced when attempting to display
+its output:</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="va">SLM2</span><span class="op">[</span>,<span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></span>
+<span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; At least 3 independent variables are needed (including the intercept in the first column) to carry out the calculations. The code 'plot(cv_vif(x))' or 'cv_vif(x) |&gt; plot()' will fail.</span></span></code></pre></div>
+<p><img src="The_rvif_package_files/figure-html/unnamed-chunk-19-1.png" width="50%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="va">soil</span><span class="op">[</span>,<span class="op">-</span><span class="fl">16</span><span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="../reference/cv_vif.html">cv_vif</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; System is computationally singular. Modify the design matrix before running the code. The code 'plot(cv_vif(x))' or 'cv_vif(x) |&gt; plot()' will fail.</span></span></code></pre></div>
+<p><img src="The_rvif_package_files/figure-html/unnamed-chunk-20-1.png" width="50%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div class="section level2">
@@ -499,7 +535,7 @@ and
 values associated with the independent variable
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">i=1,2,\dots,k</annotation></semantics></math>.The
 command and arguments of this function are as follows:</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># rvifs(x, ul = TRUE, intercept = TRUE, tol = 1e-30)</span></span></code></pre></div>
 <p>As can be seen:</p>
 <ul>
@@ -525,7 +561,7 @@ function.</p></li>
 second example of the <em>cv_vif</em> function, it can be observed that
 all the variables (except the last one) have high RVIF values and a high
 percentage of approximate multicollinearity:</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">2025</span><span class="op">)</span></span>
 <span></span>
 <span>    <span class="va">obs</span> <span class="op">=</span> <span class="fl">100</span></span>
@@ -546,7 +582,7 @@ percentage of approximate multicollinearity:</p>
 <p>However, when applied to data on soil characteristics, where there is
 no intercept in the design matrix, high values are observed for all
 variables:</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="va">soil</span><span class="op">[</span>,<span class="op">-</span><span class="fl">16</span><span class="op">]</span></span>
 <span>    <span class="fu"><a href="../reference/rvifs.html">rvifs</a></span><span class="op">(</span><span class="va">x</span>, intercept<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; System is computationally singular. Modify the design matrix before running the code.</span></span>
@@ -569,7 +605,7 @@ variables:</p>
 <p>Finally, by applying the <em>rvif</em> to the simple linear
 regression model, we can determine the degree of non-essential
 multicollinearity:</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cte</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">obs</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">2025</span><span class="op">)</span></span>
 <span><span class="va">x2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">obs</span>, <span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span></span>
@@ -582,7 +618,7 @@ multicollinearity:</p>
 <span><span class="co">#&gt; Variable 2 1.538266 34.9917</span></span></code></pre></div>
 <p>A high degree of non-essential multicollinearity is detected if a
 variable with little variability is generated.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cte</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">obs</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">2025</span><span class="op">)</span></span>
 <span><span class="va">x2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">obs</span>, <span class="fl">3</span>, <span class="fl">0.04</span><span class="op">)</span></span>
@@ -596,7 +632,7 @@ variable with little variability is generated.</p>
 <p>If this variable is centered to solve the detected problem, the RVIFs
 coincide with their minimum value, indicating orthogonality between the
 elements of the design matrix:</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x2</span> <span class="op">=</span> <span class="va">x2</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">x2</span><span class="op">)</span></span>
 <span>    </span>
 <span>  <span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">cte</span>, <span class="va">x2</span><span class="op">)</span></span>
@@ -609,7 +645,7 @@ elements of the design matrix:</p>
 multicollinearity due to each variable remain equal to zero. However,
 since there is no universal minimum reference value, interpreting the
 RVIF becomes more complicated:</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/rvifs.html">rvifs</a></span><span class="op">(</span><span class="va">x</span>, ul<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                RVIF %</span></span>
 <span><span class="co">#&gt; Intercept  0.010000 0</span></span>
@@ -669,7 +705,7 @@ test.</p>
 </blockquote>
 <p>The <em>multicollinearity</em> function allows you to check the
 condition of the theorem using the following code:</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># multicollinearity(y, x, alpha = 0.05)</span></span></code></pre></div>
 <p>The first argument of the function refers to the dependent variable
 of the linear regression model. The second relates to the design matrix
@@ -689,7 +725,7 @@ assume any transformation..</p>
 considered jointly valid at the same time that is not rejected the null
 hypothesis that each coefficient of the independent variables is
 zero:</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">reg_W</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Call:</span></span>
@@ -713,7 +749,7 @@ zero:</p>
 determined due to the three independent variables. However, when the
 <em>multicollinearity</em> command is used, it can be observed that only
 the second of these is affected by the detected problem:</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y</span> <span class="op">=</span> <span class="va">Wissel</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span></span>
 <span><span class="va">x</span> <span class="op">=</span> <span class="va">Wissel</span><span class="op">[</span>,<span class="fl">3</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span></span>
 <span>  </span>
@@ -732,7 +768,7 @@ variable is due to the degree of multicollinearity in the model.</p>
 </h3>
 <p>The <em>multiColl</em> package contains data from Klein and
 Goldberger on consumption and wage income.</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">KG</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/attach.html" class="external-link">attach</a></span><span class="op">(</span><span class="va">KG</span><span class="op">)</span></span>
 <span>  <span class="va">reg_KG</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">consumption</span><span class="op">~</span><span class="va">wage.income</span><span class="op">+</span><span class="va">non.farm.income</span><span class="op">+</span><span class="va">farm.income</span><span class="op">)</span></span>
@@ -766,7 +802,7 @@ a sign of strong multicollinearity.</p>
 <p>Using the <em>multicollinearity</em> command, it is possible to
 determine that the statistical analysis of the second variable is
 affected by the degree of multicollinearity in the model:</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">KG</span>, n<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   consumption wage.income non.farm.income farm.income</span></span>
 <span><span class="co">#&gt; 1        62.8       43.41           17.10        3.96</span></span>
@@ -798,7 +834,7 @@ model.</p>
 <p>If the first one is used, the <em>vif</em> command effectively
 indicates that the model has fewer than two terms and does not perform
 any calculations:</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">SLM1</span>, n<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt;           y1 cte         V</span></span>
 <span><span class="co">#&gt; 1  82.392059   1 19.001420</span></span>
@@ -822,7 +858,7 @@ consequently, there could be a problem of multicollinearity.</p>
 <p>However, if the <em>multicollinearity</em> command is used, it is
 possible to determine the degree of multicollinearity in the model and
 whether it affects the statistical analysis of the model:</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y</span> <span class="op">=</span> <span class="va">SLM1</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">x</span> <span class="op">=</span> <span class="va">SLM1</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span></span>
 <span></span>
@@ -833,7 +869,7 @@ whether it affects the statistical analysis of the model:</p>
 <p>While the degree of multicollinearity does not affect the statistical
 analysis of the model in the first data set, it does affect the
 second:</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">SLM2</span>, n<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt;         y2 cte         Z</span></span>
 <span><span class="co">#&gt; 1 43.01204   1  9.978211</span></span>
@@ -853,7 +889,7 @@ second:</p>
 values of the non-rejection region (determined by the values
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">c_{0}(i)</annotation></semantics></math>
 and $c_{3}(i)) change:</p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/multicollinearity.html">multicollinearity</a></span><span class="op">(</span><span class="va">y</span>, <span class="va">x</span>, alpha<span class="op">=</span><span class="fl">0.01</span><span class="op">)</span></span>
 <span><span class="co">#&gt;        RVIFs         c0         c3 Scenario Affects</span></span>
 <span><span class="co">#&gt; 1 187.800878 12.0701590  0.0583291      b.1     Yes</span></span>
@@ -872,7 +908,7 @@ multicollinearity.</p>
 <p>Using the *multicollinearity** command, it is observed that only the
 statistical analysis of the intercept, CECbuffer and HumicMatter is
 affected by the degree of multicollinearity present:</p>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y</span> <span class="op">=</span> <span class="va">soil</span><span class="op">[</span>,<span class="fl">16</span><span class="op">]</span></span>
 <span><span class="va">x</span> <span class="op">=</span> <span class="va">soil</span><span class="op">[</span>,<span class="op">-</span><span class="fl">16</span><span class="op">]</span> </span>
 <span><span class="va">intercept</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">)</span></span>

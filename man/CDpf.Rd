@@ -24,7 +24,7 @@ Olva Maldonado, H. (2009). Análisis de la función de producción Cobb-Douglas 
 Tesis, Universidad Autónoma de Chapingo.
 
 Salmerón, R., García, C.B. and García, J. (2025). A redefined Variance Inflation Factor: overcoming the 
-limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: https://doi.org/10.1007/s10614-024-10575-8.
+limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: \doi{10.1007/s10614-024-10575-8}.
 }
 \examples{
   head(CDpf, n=5)

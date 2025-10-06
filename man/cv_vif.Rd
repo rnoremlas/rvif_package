@@ -30,16 +30,16 @@ and determining the kind of multicollinearity present and the variables causing 
 }
 \references{
 Salmerón, R., García, C.B. and García, J. (2018). Variance inflation factor and condition number in multiple linear
-regression. Journal of Statistical Computation and Simulation, 88:2365-2384, doi: https://doi.org/10.1080/00949655.2018.1463376.
+regression. Journal of Statistical Computation and Simulation, 88:2365-2384, doi: \doi{10.1080/00949655.2018.1463376}.
 
 Salmerón, R., Rodríguez, A. and García, C.B. (2020). Diagnosis and quantification of 
-the non-essential collinearity. Computational Statistics, 35(2), 647-666, doi: https://doi.org/10.1007/s00180-019-00922-x.
+the non-essential collinearity. Computational Statistics, 35(2), 647-666, doi: \doi{10.1007/s00180-019-00922-x}.
 
 Salmerón, R., García, C.B., Rodríguez, A. and García, C. (2022). Limitations in detecting multicollinearity due to scaling issues in the 
-mcvis package. R Journal, 14(4), 264-279, doi: https://doi.org/10.32614/RJ-2023-010.
+mcvis package. R Journal, 14(4), 264-279, doi: \doi{10.32614/RJ-2023-010}.
 }
 \author{R. Salmerón (\email{romansg@ugr.es}) and C. García (\email{cbgarcia@ugr.es}).}
-\seealso{\code{\link{cv_vif_plot}}}
+\seealso{\code{\link{plot.cv_vif}}}
 \examples{
 ### Example 1 
 ### At least three independent variables, including the intercept, must be present

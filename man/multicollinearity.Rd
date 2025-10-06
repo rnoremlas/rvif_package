@@ -37,10 +37,10 @@ significance analysis is affected by multicollinearity at the chosen significanc
 }
 \references{
 Salmerón, R., García, C.B. and García, J. (2025). A Redefined Variance Inflation Factor: overcoming the limitations of 
-the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: https://doi.org/10.1007/s10614-024-10575-8.
+the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: \doi{10.1007/s10614-024-10575-8}.
 
 Overcoming the inconsistences of the variance inflation factor: a redefined VIF and a test to detect statistical 
-troubling multicollinearity by Salmerón, R., García, C.B and García, J. (working paper, https://arxiv.org/pdf/2005.02245).
+troubling multicollinearity by Salmerón, R., García, C.B and García, J. (working paper, \url{https://arxiv.org/pdf/2005.02245}).
 }
 \author{
   Román Salmerón Gómez (University of Granada) and Catalina B. García García (University of Granada).

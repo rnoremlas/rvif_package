@@ -24,10 +24,10 @@ This dataset is originally used by Salmerón, Rodríguez and García (2020).
 }
 \references{
 Salmerón, R., Rodríguez, A. and García, C.B. (2020). Diagnosis and quantification of 
-the non-essential collinearity. Computational Statistics, 35(2), 647-666, doi: https://doi.org/10.1007/s00180-019-00922-x.
+the non-essential collinearity. Computational Statistics, 35(2), 647-666, doi: \doi{10.1007/s00180-019-00922-x}.
 
 Salmerón, R., García, C.B. and García, J. (2025). A redefined Variance Inflation Factor: overcoming the 
-limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: https://doi.org/10.1007/s10614-024-10575-8.
+limitations of the Variance Inflation Factor. Computational Economics, 65, 337-363, doi: \doi{10.1007/s10614-024-10575-8}.
 }
 \examples{
   head(euribor, n=5)

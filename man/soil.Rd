@@ -35,7 +35,7 @@ This dataset is originally used by Bondell and Reich (2008).
 }
 \references{
 Bondell, H.D. and Reich. B.J. (2008). Simultaneous regression shrinkage, variable selection, and supervised 
-clustering of predictors with OSCAR. Biometrics, 64 (1), 115--23, doi: https://doi.org/10.1111/j.1541-0420.2007.00843.x. 
+clustering of predictors with OSCAR. Biometrics, 64 (1), 115--23, doi: \doi{10.1111/j.1541-0420.2007.00843.x}. 
 }
 \examples{
   head(soil, n=5)
